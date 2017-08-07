@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>I'm in a React app!</title>
+</head>
+
+<body>
+  <div id="app">
+
+  </div>
+
+  <script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
+  <script>
+    const square = React.createElement('div', {
+      style: {
+        width: '100px',
+        height: '100px',
+        backgroundColor: 'red',
+        margin: '12px',
+        display: 'inline-block',
+      }
+    })
+    const circle = React.createElement('div', {
+      style: {
+        width: '100px',
+        height: '100px',
+        backgroundColor: 'green',
+        margin: '10px',
+        borderRadius: '50%',
+        display: 'inline-block',
+      }
+    })
+    const container = React.createElement(
+      // The first argument specifies the element's type
+      'div',
+      // The second argument specifies the element's attributes, or "props"
+      {
+        style: {
+          border: '1px solid blue',
+          width: '500px',
+          height: '500px',
+        }
+      },
+      // The remaining arguments list the element's children
+      square,
+      square,
+      square,
+      square,
+      square,
+      square,
+      square,
+      square,
+      circle,
+      circle,
+      circle,
+    )
+
+    ReactDOM.render(container, document.getElementById('app'))
+  </script>
+</body>
+
+</html>

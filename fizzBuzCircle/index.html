@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>I'm in a React app!</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
+  <script>
+    // JavaScript source goes here
+    import {
+      getBoxStyle
+    } from 'react-armory-spiral'
+
+    let creatBox = num => {
+      if (num % 15 === 0) {
+        return React.createElement('div', {
+            style: getBoxStyle(num - 1),
+            key: num
+          },
+          React.createElement('strong', {}, 'FizzBuzz'));
+      } else if (num % 3 === 0) {
+        return React.createElement('div', {
+            style: getBoxStyle(num - 1),
+            key: num
+          },
+          React.createElement('strong', {}, 'Fizz'));
+      } else if (num % 5 === 0) {
+        return React.createElement('div', {
+            style: getBoxStyle(num - 1),
+            key: num
+          },
+          React.createElement('strong', {}, 'Buzz'));
+      } else {
+        return React.createElement('div', {
+          style: getBoxStyle(num - 1),
+          key: num
+        }, num);
+
+      }
+    };
+
+    let boxes = [
+
+    ]
+    for (let i = 0; i < 15; i++) {
+      boxes.push(creatBox(i));
+    }
+
+
+    ReactDOM.render(
+      React.createElement('div', {}, boxes),
+      document.getElementById('app')
+    )
+  </script>
+</body>
+
+</html>
